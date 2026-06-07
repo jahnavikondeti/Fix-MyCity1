@@ -69,8 +69,8 @@ window.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Display issues
-  issues.forEach(issue => {
+  // Display issues (ONLY CHANGE: added index + delete button)
+  issues.forEach((issue, index) => {
     const card = document.createElement("div");
 
     card.className = "card";
@@ -82,8 +82,32 @@ window.addEventListener("DOMContentLoaded", () => {
       <p>${issue.desc}</p>
       <p><strong>Date:</strong> ${issue.date}</p>
       <span class="status pending">${issue.status}</span>
+
+      <!-- DELETE BUTTON ADDED -->
+      <button class="delete-btn" data-index="${index}">
+        🗑 Delete
+      </button>
     `;
 
     issueList.appendChild(card);
   });
+});
+
+
+// =======================
+// DELETE FUNCTION (ADDED ONLY THIS BLOCK)
+// =======================
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("delete-btn")) {
+
+    let index = e.target.getAttribute("data-index");
+
+    let issues = JSON.parse(localStorage.getItem("issues")) || [];
+
+    issues.splice(index, 1);
+
+    localStorage.setItem("issues", JSON.stringify(issues));
+
+    location.reload();
+  }
 });
