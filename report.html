@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue | Fix MyCity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+```
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Fix MyCity</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+</header>
+
+<!-- REPORT SECTION -->
+<section class="report-page">
+
+    <!-- LEFT IMAGE -->
+    <div class="report-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+             alt="Report Issue">
+    </div>
+
+    <!-- FORM -->
+    <div class="form-container">
+
+        <h1>🚧 Report an Issue</h1>
+
+        <p>
+            Help improve your community by reporting civic problems
+            in your area.
+        </p>
+
+        <form id="issueForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <select id="type" required>
+                <option value="">Select Issue Type</option>
+                <option>Pothole</option>
+                <option>Garbage</option>
+                <option>Broken Streetlight</option>
+                <option>Water Leakage</option>
+                <option>Road Damage</option>
+                <option>Drainage Problem</option>
+            </select>
+
+            <textarea
+                id="desc"
+                placeholder="Describe the issue..."
+                required
+            ></textarea>
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Location"
+                required
+            >
+
+            <input
+                type="file"
+                id="image"
+                accept="image/*"
+            >
+
+            <button
+                type="submit"
+                class="btn primary-btn"
+            >
+                Submit Report
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="app.js"></script>
+```
+
+</body>
+</html>
